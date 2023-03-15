@@ -1,0 +1,42 @@
+program to do list
+
+    start
+    // Inisialisasi variabel
+    READ AND WRITE "tasks" with string
+
+    WHILE true DO
+        // Menampilkan menu
+        PRINT "===== TODO LIST ====="
+        PRINT "1. Tambahkan tugas"
+        PRINT "2. Tampilkan daftar tugas"
+        PRINT "3. Selesai"
+        
+        // Menerima input dari pengguna
+        INPUT choice
+        
+        IF choice = 1 THEN
+            // Meminta pengguna memasukkan nama tugas baru
+            PRINT "Masukkan nama tugas:"
+            INPUT task_name
+            
+            // Menambahkan tugas ke daftar
+            tasks.append(task_name)
+            PRINT "Tugas berhasil ditambahkan!"
+        
+        ELSE IF choice = 2 THEN
+            // Menampilkan daftar tugas
+            PRINT "===== DAFTAR TUGAS ====="
+            FOR i IN range(len(tasks)) DO
+                PRINT (i+1) + ". " + tasks[i]
+            
+        ELSE IF choice = 3 THEN
+            // Keluar dari program
+            PRINT "Terima kasih telah menggunakan program TODO list!"
+            BREAK
+        
+        ELSE
+            // Menampilkan pesan kesalahan jika input tidak valid
+            PRINT "Input tidak valid. Silakan pilih opsi 1-3."
+    
+    END WHILE
+END
